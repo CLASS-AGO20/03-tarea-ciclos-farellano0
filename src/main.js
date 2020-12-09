@@ -11,17 +11,20 @@ export default class App {
     }
     sumatoriaSerieDos(numero){
         let suma = 0;
-        let denominador = 1
-        let i = 1/denominador;
+        let denominador = 2;
+        let i = 1;
 
-        while(i >= 1/numero){
-            suma = suma + i;
-            denominador ++;
-
+        while(i >= 1 / numero){
+            
+            if(denominador % 2 != 0 || i == 1){
+                suma = suma + i;
+            } else {
+                suma = suma - i;
+            }
+            i = 1 / denominador++;
         }
         return suma;
     }
-
 
 }
 
@@ -31,5 +34,5 @@ console.log("Probando sumatoriaSerieUno()");
 console.log(app.sumatoriaSerieUno(15));
 
 console.log("Probando sumatoriaSerieDos()");
-console.log(app.sumatoriaSerieDos(15));
+console.log(app.sumatoriaSerieDos(4));
 
