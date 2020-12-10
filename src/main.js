@@ -66,8 +66,14 @@ export default class App {
         }
         for(let i = numero1; i >= numero2; i--){
             if(i % 2 != 0){
-                imp = imp + i + ",";
-                imp = imp.toString();
+                if(imp == 0){
+                    imp = imp + i;
+                    imp = imp.toString();
+                } else {
+                    imp = imp + "," + i;
+                    imp = imp.toString();
+                }
+                
             }
         }
         return imp;
@@ -90,5 +96,5 @@ console.log("Probando obtenerMultiplos()");
 console.log(app.obtenerMultiplos(10,25));
 
 console.log("Probando obtenerImpares");
-console.log(app.obtenerImpares(10, 5));
+console.log(app.obtenerImpares(10, 2));
 
