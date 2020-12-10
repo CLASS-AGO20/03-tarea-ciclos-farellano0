@@ -42,6 +42,36 @@ export default class App {
             return false;
         }
     }
+    obtenerMultiplos(inicio, fin){
+        let i = inicio;
+        let str = 0;
+
+        do{
+            if (i % 3 == 0){
+                str = str + i;
+                str = str.toString();
+            }
+            i++
+
+        } while(i <= fin);
+        return str;
+    }
+    obtenerImpares(numero1, numero2){
+        let t;
+        let imp = 0;
+        if(numero2 > numero1){
+            t = numero1;
+            numero1 = numero2;
+            numero2 = t;
+        }
+        for(let i = numero1; i >= numero2; i--){
+            if(i % 2 != 0){
+                imp = imp + i + ",";
+                imp = imp.toString();
+            }
+        }
+        return imp;
+    }
 
 }
 
@@ -55,4 +85,10 @@ console.log(app.sumatoriaSerieDos(4));
 
 console.log("Probando esPrimo");
 console.log(app.esPrimo(97));
+
+console.log("Probando obtenerMultiplos()");
+console.log(app.obtenerMultiplos(10,25));
+
+console.log("Probando obtenerImpares");
+console.log(app.obtenerImpares(10, 5));
 
